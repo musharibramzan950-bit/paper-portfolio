@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUSHARIB — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="hero">
+    <!-- left: intro -->
+    <section class="intro">
+      <p class="eyebrow">portfolio · est. 2026</p>
+      <h1>
+        Hi, I am <span class="name">MUSHARIB</span><span class="ink-dot">.</span>
+      </h1>
+      <p class="lede">
+        I build playful things on the internet , interfaces that feel less
+        like software and more like something you can touch. This page is one
+        of them: the video on the right isn't animated by code, it's scrubbed
+        by <em>your hand</em>. Make a fist, open your palm, and watch my
+        thoughts spill out. Close it, and they go right back in.
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/musharibramzan950-bit" target="_blank">See my work</a>
+        <p class="hint mono">no hand? arrow keys scrub too →</p>
+      </div>
+    </section>
+
+    <!-- right: hand-scrubbed video -->
+    <section class="stage">
+      <figure class="photo-frame">
+        <span class="tape tape-tl"></span>
+        <span class="tape tape-br"></span>
+        <video id="scrubVideo" src="assets/me.mp4" muted playsinline preload="auto"></video>
+        <div id="videoFallback" class="video-fallback" hidden>
+          <p class="mono">assets/me.mp4 not found</p>
+          <p>drop your reel there &amp; refresh</p>
+        </div>
+        <figcaption class="mono">Visual representation of my brain</figcaption>
+      </figure>
+
+      <!-- camera HUD -->
+      <aside class="hud">
+        <header class="hud-top mono">
+          <span class="rec-dot" id="recDot"></span>
+          <span id="hudStatus">HAND TRACKER · OFF</span>
+        </header>
+        <div class="hud-view">
+          <video id="camVideo" muted playsinline></video>
+          <canvas id="camCanvas"></canvas>
+          <button id="startBtn" class="hud-start mono">enable ✋</button>
+        </div>
+        <footer class="hud-bottom">
+          <div class="meter"><div id="meterFill" class="meter-fill"></div></div>
+          <span id="opennessLabel" class="mono">0%</span>
+        </footer>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
